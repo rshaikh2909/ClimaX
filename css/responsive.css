@@ -1,0 +1,138 @@
+/* ==========================
+   Laptop (1200px)
+========================== */
+
+@media (max-width:1200px){
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .weather-animation{
+
+        width:220px;
+        height:220px;
+    }
+
+}
+
+/* ==========================
+   Tablet (992px)
+========================== */
+
+@media (max-width:992px){
+
+    .highlights{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .search-box{
+
+        width:100%;
+
+        max-width:none;
+
+    }
+
+}
+
+/* ==========================
+   Mobile (768px)
+========================== */
+
+@media (max-width:768px){
+
+    .hero{
+
+        padding:25px;
+    }
+
+    .weather-info h1{
+
+        font-size:60px;
+    }
+
+    .weather-info h2{
+
+        font-size:30px;
+    }
+
+    .weather-info p{
+
+        font-size:18px;
+    }
+
+    .highlights{
+
+        grid-template-columns:1fr;
+    }
+
+    .forecast{
+
+        padding:20px;
+    }
+
+    .day-card{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        text-align:center;
+    }
+
+}
+
+/* ==========================
+   Small Mobile (480px)
+========================== */
+
+@media (max-width:480px){
+
+    .container{
+
+        width:95%;
+    }
+
+    .logo h2{
+
+        font-size:24px;
+    }
+
+    .weather-info h1{
+
+        font-size:50px;
+    }
+
+    .theme-btn{
+
+        width:48px;
+        height:48px;
+    }
+
+    .search-box input{
+
+        font-size:14px;
+
+        padding:14px;
+    }
+
+    .search-box button{
+
+        width:55px;
+    }
+
+}

@@ -1,0 +1,509 @@
+/* ==========================
+   Animated Background
+========================== */
+
+body{
+    background-size:400% 400%;
+    animation:gradientMove 18s ease infinite;
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* ==========================
+   SUN
+========================== */
+
+.sun{
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:#FFD93D;
+
+    position:absolute;
+
+    animation:
+        rotateSun 25s linear infinite,
+        glowSun 2s ease-in-out infinite alternate;
+
+    box-shadow:
+        0 0 30px #FFD93D,
+        0 0 60px #FFD93D;
+}
+
+@keyframes rotateSun{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes glowSun{
+
+    from{
+        box-shadow:
+            0 0 20px #FFD93D,
+            0 0 40px #FFD93D;
+    }
+
+    to{
+        box-shadow:
+            0 0 40px #FFD93D,
+            0 0 80px #FFD93D;
+    }
+
+}
+
+/* ==========================
+   CLOUD
+========================== */
+
+.cloud{
+
+    position:absolute;
+
+    width:120px;
+    height:45px;
+
+    background:white;
+
+    border-radius:40px;
+
+    top:70px;
+    left:120px;
+
+    opacity:.95;
+
+    animation:moveCloud 12s ease-in-out infinite;
+
+}
+
+.cloud::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:55px;
+    height:55px;
+
+    background:white;
+
+    border-radius:50%;
+
+    left:15px;
+    top:-25px;
+
+}
+
+.cloud::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:70px;
+    height:70px;
+
+    background:white;
+
+    border-radius:50%;
+
+    right:10px;
+    top:-35px;
+
+}
+
+@keyframes moveCloud{
+
+    0%{
+
+        transform:translateX(-15px);
+
+    }
+
+    50%{
+
+        transform:translateX(20px);
+
+    }
+
+    100%{
+
+        transform:translateX(-15px);
+
+    }
+
+}
+
+/* ==========================
+   RAIN
+========================== */
+
+.rain{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    display:none;
+
+}
+
+.drop{
+
+    position:absolute;
+
+    width:2px;
+
+    height:18px;
+
+    background:rgba(255,255,255,.8);
+
+    border-radius:50px;
+
+    animation:rainFall linear infinite;
+
+}
+
+@keyframes rainFall{
+
+    from{
+
+        transform:translateY(-120px);
+
+    }
+
+    to{
+
+        transform:translateY(300px);
+
+    }
+
+}
+
+/* =====================================
+   LIGHTNING
+===================================== */
+
+.lightning{
+
+    position:absolute;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+.flash{
+
+    animation:flash .25s;
+
+}
+
+@keyframes flash{
+
+    0%{opacity:0;}
+
+    50%{opacity:.9;}
+
+    100%{opacity:0;}
+
+}
+
+/* =====================================
+   MOON
+===================================== */
+
+.moon{
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    background:#f5f5f5;
+
+    position:absolute;
+
+    top:30px;
+
+    right:40px;
+
+    display:none;
+
+    box-shadow:
+        0 0 20px white,
+        0 0 40px white;
+
+}
+
+/* =====================================
+   STARS
+===================================== */
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    background-image:
+
+        radial-gradient(white 2px,transparent 2px),
+
+        radial-gradient(white 1px,transparent 1px);
+
+    background-size:
+
+        80px 80px,
+
+        120px 120px;
+
+    opacity:.6;
+
+} 
+
+/* ==========================
+   FOG
+========================== */
+
+.fog{
+
+    position:absolute;
+
+    width:220px;
+    height:60px;
+
+    background:
+    rgba(255,255,255,.25);
+
+    border-radius:50px;
+
+    filter:blur(12px);
+
+    animation:fogMove 16s linear infinite;
+
+}
+
+@keyframes fogMove{
+
+    from{
+
+        transform:translateX(-100px);
+
+    }
+
+    to{
+
+        transform:translateX(250px);
+
+    }
+
+}
+
+/* ==========================
+   Floating Cards
+========================== */
+
+.hero{
+
+    animation:floatCard 5s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* ==========================
+   Weather Icons
+========================== */
+
+.card i{
+
+    animation:iconBounce 3s infinite;
+
+}
+
+@keyframes iconBounce{
+
+    0%,100%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/* ==========================
+   Fade In
+========================== */
+
+.hero,
+.card,
+.forecast{
+
+    animation:
+    fadeUp .8s ease forwards;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+/* =====================================
+   Dynamic Weather Backgrounds
+===================================== */
+
+body.sunny {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+body.cloudy {
+    background: linear-gradient(135deg, #757f9a, #d7dde8);
+}
+
+body.rainy {
+    background: linear-gradient(135deg, #314755, #26a0da);
+}
+
+body.snowy {
+    background: linear-gradient(135deg, #e6dada, #274046);
+}
+
+body.storm {
+    background: linear-gradient(135deg, #232526, #414345);
+}
+
+body.clear {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+/* =====================================
+   SNOW
+===================================== */
+
+.snow{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    display:none;
+
+    pointer-events:none;
+
+}
+
+.flake{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    background:white;
+
+    border-radius:50%;
+
+    opacity:.9;
+
+    animation:snowFall linear infinite;
+
+}
+
+@keyframes snowFall{
+
+    from{
+
+        transform:
+            translateY(-30px)
+            translateX(0);
+
+    }
+
+    to{
+
+        transform:
+            translateY(320px)
+            translateX(40px);
+
+    }
+
+}

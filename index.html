@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ClimaX | Weather Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icons/weather.png">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="responsive.css">
+
+</head>
+
+<body>
+
+    <!-- Background Animation -->
+    <div class="background-animation"></div>
+
+    <div class="container">
+
+        <!-- ================= HEADER ================= -->
+
+        <header>
+
+            <div class="logo">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <h2>ClimaX</h2>
+            </div>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search city..."
+                    aria-label="Search City">
+
+                <button id="searchBtn" aria-label="Search Weather">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <button id="locationBtn" aria-label="Current Location" title="Use Current Location">
+                    <i class="fa-solid fa-location-dot"></i>
+                </button>
+
+            </div>
+
+            <button class="theme-btn" id="themeBtn" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+        </header>
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero glass">
+
+            <div class="weather-animation">
+
+                <div class="sun"></div>
+
+                <div class="cloud"></div>
+
+                <div class="rain" id="rain"></div>
+
+                <div class="snow" id="snow"></div>
+
+                <div class="lightning" id="lightning"></div>
+
+                <div class="stars" id="stars"></div>
+
+                <div class="moon"></div>
+
+            </div>
+
+            <div class="weather-info">
+
+                <h1 id="temperature">29°C</h1>
+
+                <h2 id="cityName">Mumbai</h2>
+
+                <p id="description">
+                    Mostly Sunny
+                </p>
+
+                <div class="weather-details">
+
+                    <span id="feelsLike">
+                        Feels Like 31°C
+                    </span>
+
+                    <br><br>
+
+                    <span id="sunrise">
+                        🌅 Sunrise : --
+                    </span>
+
+                    <br>
+
+                    <span id="sunset">
+                        🌇 Sunset : --
+                    </span>
+
+                    <br>
+
+                    <span id="updatedTime">
+                        🕒 Updated : --
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= HIGHLIGHTS ================= -->
+
+        <section class="highlights">
+
+            <div class="card glass">
+                <i class="fa-solid fa-droplet"></i>
+                <h3>Humidity</h3>
+                <p id="humidity">72%</p>
+            </div>
+
+            <div class="card glass">
+                <i class="fa-solid fa-wind"></i>
+                <h3>Wind</h3>
+                <p id="wind">12 km/h</p>
+            </div>
+
+            <div class="card glass">
+                <i class="fa-solid fa-gauge-high"></i>
+                <h3>Pressure</h3>
+                <p id="pressure">1012 hPa</p>
+            </div>
+
+            <div class="card glass">
+                <i class="fa-solid fa-eye"></i>
+                <h3>Visibility</h3>
+                <p id="visibility">10 km</p>
+            </div>
+
+            <div class="card glass">
+                <i class="fa-solid fa-sun"></i>
+                <h3>UV Index</h3>
+                <p id="uv">4</p>
+            </div>
+
+            <div class="card glass">
+                <i class="fa-solid fa-smog"></i>
+                <h3>Air Quality</h3>
+                <p id="aqi">Good</p>
+            </div>
+
+        </section>
+
+        <!-- ================= 24 HOUR FORECAST ================= -->
+
+        <section class="forecast glass">
+
+            <h2>24 Hour Forecast</h2>
+
+            <div class="hourly-container" id="hourlyForecast">
+
+                <!-- JavaScript will generate hourly forecast -->
+
+            </div>
+
+        </section>
+
+        <!-- ================= 7 DAY FORECAST ================= -->
+
+        <section class="forecast glass">
+
+            <h2>7 Day Forecast</h2>
+
+            <div class="daily-container" id="dailyForecast">
+
+                <!-- JavaScript will generate daily forecast -->
+
+            </div>
+
+        </section>
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <p>
+                © 2026 ClimaX • Designed & Developed by Rodha Shaikh
+            </p>
+
+        </footer>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="api.js"></script>
+    <script src="animations.js"></script>
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+
+</body>
+</html>
