@@ -93,6 +93,19 @@
 
         text-align:center;
     }
+    .history-section{
+    grid-template-columns:1fr;
+}
+
+}
+
+.navbar{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
 
 }
 

@@ -35,34 +35,44 @@
 
         <header>
 
-            <div class="logo">
-                <i class="fa-solid fa-cloud-sun"></i>
-                <h2>ClimaX</h2>
-            </div>
+    <div class="logo">
+        <i class="fa-solid fa-cloud-sun"></i>
+        <h2>ClimaX</h2>
+    </div>
 
-            <div class="search-box">
+    <nav class="navbar">
 
-                <input
-                    type="text"
-                    id="cityInput"
-                    placeholder="Search city..."
-                    aria-label="Search City">
+        <a href="index.html" class="active">Home</a>
+        <a href="forecast.html">Forecast</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
 
-                <button id="searchBtn" aria-label="Search Weather">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
+    </nav>
 
-                <button id="locationBtn" aria-label="Current Location" title="Use Current Location">
-                    <i class="fa-solid fa-location-dot"></i>
-                </button>
+    <div class="search-box">
 
-            </div>
+        <input
+            type="text"
+            id="cityInput"
+            placeholder="Search city..."
+            aria-label="Search City">
 
-            <button class="theme-btn" id="themeBtn" aria-label="Toggle Dark Mode">
-                <i class="fa-solid fa-moon"></i>
-            </button>
+        <button id="searchBtn" aria-label="Search Weather">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
 
-        </header>
+        <button id="locationBtn" aria-label="Current Location">
+            <i class="fa-solid fa-location-dot"></i>
+        </button>
+
+    </div>
+
+    <button class="theme-btn" id="themeBtn">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+</header>
+        <div id="errorBox" class="error-box"></div>
 
         <!-- ================= HERO ================= -->
 
@@ -125,6 +135,40 @@
             </div>
 
         </section>
+
+        <!-- ================= SEARCH HISTORY ================= -->
+
+<section class="history-section">
+
+    <div class="glass history-card">
+
+        <div class="section-header">
+            <h2>🕒 Recent Searches</h2>
+            <button id="clearHistoryBtn" class="small-btn">Clear</button>
+        </div>
+
+        <div id="searchHistory" class="tag-container"></div>
+
+    </div>
+
+    <div class="glass history-card">
+
+        <div class="section-header">
+            <h2>❤️ Favorite Cities</h2>
+            <button id="clearFavoritesBtn" class="small-btn">Clear</button>
+        </div>
+
+        <div id="favoriteCities" class="tag-container"></div>
+
+    </div>
+
+</section>
+
+<div style="text-align:center;margin-bottom:30px;">
+    <button id="favoriteBtn" class="glass favorite-btn">
+        ❤️ Add Current City to Favorites
+    </button>
+</div>
 
         <!-- ================= HIGHLIGHTS ================= -->
 

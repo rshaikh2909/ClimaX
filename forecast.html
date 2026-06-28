@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Forecast | ClimaX</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<div class="logo">
+<i class="fa-solid fa-cloud-sun"></i>
+<h2>ClimaX</h2>
+</div>
+
+<nav class="navbar">
+
+<a href="index.html">Home</a>
+<a href="forecast.html" class="active">Forecast</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</header>
+<section class="forecast-page glass">
+
+    <h1>🌤 7-Day Weather Forecast</h1>
+
+    <p class="forecast-subtitle">
+        View the upcoming week's weather conditions.
+    </p>
+
+    <div id="dailyForecast" class="daily-container">
+        <!-- JavaScript will generate forecast cards -->
+    </div>
+
+</section>
+
+<section class="glass tips-section">
+
+    <h2>🌦 Weather Tips</h2>
+
+    <div class="tips-grid">
+
+        <div class="tip-card">
+            ☀️ Stay hydrated during hot weather.
+        </div>
+
+        <div class="tip-card">
+            🌧 Carry an umbrella if rain is expected.
+        </div>
+
+        <div class="tip-card">
+            ❄ Wear warm clothes during cold weather.
+        </div>
+
+        <div class="tip-card">
+            🌩 Avoid open areas during thunderstorms.
+        </div>
+
+    </div>
+
+</section>
+
+<div style="text-align:center;margin:30px 0;">
+    <a href="index.html" class="back-btn">
+        ← Back to Dashboard
+    </a>
+</div>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
+
+<script src="js/api.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+window.addEventListener("load", () => {
+    loadWeather("Mumbai");
+});
+</script>

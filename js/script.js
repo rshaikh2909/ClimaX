@@ -28,7 +28,7 @@ function searchWeather() {
     const city = cityInput.value.trim();
 
     if (city === "") {
-        alert("Please enter a city name.");
+        showError("Please enter a city name.");
         return;
     }
 
@@ -43,7 +43,7 @@ function searchWeather() {
 function getCurrentLocation() {
 
     if (!navigator.geolocation) {
-        alert("Geolocation is not supported by your browser.");
+        showError("Geolocation is not supported by your browser.");
         return;
     }
 
@@ -66,7 +66,7 @@ function getCurrentLocation() {
         },
 
         () => {
-            alert("Unable to get your location.");
+            showError("Unable to get your location.");
         }
 
     );
@@ -100,6 +100,9 @@ function updateWeather(weather) {
 
     document.getElementById("cityName").textContent =
         weather.location.name;
+        currentCity = weather.location.name;
+
+saveSearch(currentCity);
 
     document.getElementById("description").textContent =
         weather.current.condition.text;
@@ -453,3 +456,137 @@ window.addEventListener("load", () => {
     loadWeather("Mumbai");
 
 });
+function showError(message){
+
+    const box = document.getElementById("errorBox");
+
+    box.textContent = message;
+
+    box.style.display = "block";
+
+    setTimeout(() => {
+        box.style.display = "none";
+    }, 3000);
+
+}
+
+// ================================
+// Search History & Favorites
+// ================================
+
+let searchHistory =
+    JSON.parse(localStorage.getItem("history")) || [];
+
+let favorites =
+    JSON.parse(localStorage.getItem("favorites")) || [];
+
+let currentCity = "";
+
+// Render Tags
+function renderTags(containerId, data){
+
+    const container =
+        document.getElementById(containerId);
+
+    container.innerHTML = "";
+
+    data.forEach(city => {
+
+        const tag =
+            document.createElement("div");
+
+        tag.className = "tag";
+
+        tag.textContent = city;
+
+        tag.onclick = () => {
+
+            cityInput.value = city;
+            loadWeather(city);
+
+        };
+
+        container.appendChild(tag);
+
+    });
+
+}
+
+// Save Search
+function saveSearch(city){
+
+    if(!searchHistory.includes(city)){
+
+        searchHistory.unshift(city);
+
+        if(searchHistory.length > 8){
+
+            searchHistory.pop();
+
+        }
+
+        localStorage.setItem(
+            "history",
+            JSON.stringify(searchHistory)
+        );
+
+        renderTags("searchHistory", searchHistory);
+
+    }
+
+}
+
+// Save Favorite
+function saveFavorite(){
+
+    if(currentCity === "") return;
+
+    if(!favorites.includes(currentCity)){
+
+        favorites.push(currentCity);
+
+        localStorage.setItem(
+            "favorites",
+            JSON.stringify(favorites)
+        );
+
+        renderTags("favoriteCities", favorites);
+
+    }
+
+}
+
+// Clear Buttons
+document
+.getElementById("clearHistoryBtn")
+.onclick = () => {
+
+    searchHistory = [];
+
+    localStorage.removeItem("history");
+
+    renderTags("searchHistory", searchHistory);
+
+};
+
+document
+.getElementById("clearFavoritesBtn")
+.onclick = () => {
+
+    favorites = [];
+
+    localStorage.removeItem("favorites");
+
+    renderTags("favoriteCities", favorites);
+
+};
+
+// Favorite Button
+document
+.getElementById("favoriteBtn")
+.onclick = saveFavorite;
+
+// Initial Render
+renderTags("searchHistory", searchHistory);
+
+renderTags("favoriteCities", favorites);
