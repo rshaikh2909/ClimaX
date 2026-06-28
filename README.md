@@ -10,12 +10,6 @@ A modern, responsive weather dashboard built using HTML, CSS, and JavaScript. Cl
 
 ---
 
-## 📸 Screenshots
-
-(Add screenshots after deployment)
-
----
-
 ## ✨ Features
 
 - 🌍 Search weather by city
