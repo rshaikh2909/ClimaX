@@ -6,7 +6,7 @@ A modern, responsive weather dashboard built using HTML, CSS, and JavaScript. Cl
 
 ## 🚀 Live Demo
 
-🔗 https://your-vercel-link.vercel.app
+🔗 (https://clima-x-gamma.vercel.app/)
 
 ---
 
